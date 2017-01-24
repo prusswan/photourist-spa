@@ -17,3 +17,9 @@
 
 .byebug_history
 /public/packs
+
+# yeoman
+.tmp/
+coverage/
+dist/
+node_modules/
