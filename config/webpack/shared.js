@@ -4,6 +4,8 @@ var path = require('path')
 var glob = require('glob')
 var extname = require('path-complete-extname')
 
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   entry: glob.sync(path.join('..', 'app', 'javascript', 'packs', '*.js*')).reduce(
     function(map, entry) {
@@ -64,10 +66,15 @@ module.exports = {
     ]
   },
 
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: '../index.html',
+      template: path.resolve('../app/javascript/yo/index.html')
+    }),
+  ],
 
   resolve: {
-    extensions: [ '.js', '.coffee', '.json' ],
+    extensions: [ '.js', '.coffee' ],
     modules: [
       path.resolve('../app/javascript'),
       path.resolve('../vendor/node_modules')
