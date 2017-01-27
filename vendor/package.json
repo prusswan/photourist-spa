@@ -1,7 +1,10 @@
 {
   "name": "photourist-spa",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "1.0.0-beta.1"
+  },
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
