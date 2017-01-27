@@ -8,17 +8,5 @@
 
 console.log("Hello World from Webpacker")
 
-'use strict';
-
-// require('angular');
-import angular from 'angular';
-import uirouter from 'angular-ui-router'
-
-
-export default angular.module('app', [])
-    .controller('HelloWorldController', function($scope) {
-       $scope.greeting = "Hello World";
-       console.log("trigger");
-   });
-
+require('yo')
 
