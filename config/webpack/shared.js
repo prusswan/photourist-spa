@@ -17,6 +17,15 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /.json$/,
+        loader: "file-loader",
+        query: {
+          context: '../app/javascript/yo',
+          name: '[path][name].[ext]',
+          outputPath: '../'
+        }
+      },
       { test: /\.coffee(.erb)?$/, loader: "coffee-loader" },
       {
         test: /\.js(.erb)?$/,
@@ -37,13 +46,28 @@ module.exports = {
           runner: 'DISABLE_SPRING=1 ../bin/rails runner'
         }
       },
+      {
+        test: /\.(css|scss)$/,
+        loaders: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /.html$/,
+        loaders: [
+          'html-loader'
+        ]
+      }
     ]
   },
 
   plugins: [],
 
   resolve: {
-    extensions: [ '.js', '.coffee' ],
+    extensions: [ '.js', '.coffee', '.json' ],
     modules: [
       path.resolve('../app/javascript'),
       path.resolve('../vendor/node_modules')

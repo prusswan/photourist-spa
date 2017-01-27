@@ -2529,6 +2529,12 @@ file-loader@^0.9.0:
   dependencies:
     loader-utils "~0.2.5"
 
+file-loader@webpack/file-loader:
+  version "0.9.0"
+  resolved "https://codeload.github.com/webpack/file-loader/tar.gz/f3ad85a52db23cb629103930ecd1d4a3f776b70a"
+  dependencies:
+    loader-utils "~0.2.5"
+
 filename-regex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.0.tgz#996e3e80479b98b9897f15a8a58b3d084e926775"
