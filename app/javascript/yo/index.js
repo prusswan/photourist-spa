@@ -1,6 +1,10 @@
 import angular from 'angular';
+import 'angular-ui-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.css';
 
 import {techsModule} from './app/techs/index';
+import {citiesModule} from './app/cities/index';
 import 'angular-ui-router';
 import routesConfig from './routes';
 
@@ -12,7 +16,7 @@ import {footer} from './app/footer';
 import './index.scss';
 
 angular
-  .module('app', [techsModule, 'ui.router'])
+  .module('app', [techsModule, citiesModule, 'ui.router', 'ui.bootstrap'])
   .config(routesConfig)
   .component('app', main)
   .component('fountainHeader', header)
