@@ -1,14 +1,15 @@
 class CitiesController {
   constructor(citiesService) {
     this.citiesService = citiesService;
+    this.cities = citiesService.index();
   }
 
   showAll() {
-    this.citiesService
+    this.citiesService.get();
   }
 
   cities() {
-    return []
+    return showAll();
   }
 }
 

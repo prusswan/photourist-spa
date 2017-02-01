@@ -1,8 +1,9 @@
 import angular from 'angular';
 import ngResource from 'angular-resource';
 
-import {CitiesService} from './cities.service';
+import CitiesService from './cities.service';
 import {cities} from './cities';
+
 export const citiesModule = 'cities';
 
 angular
