@@ -70,12 +70,12 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: '../index.html',
-      template: path.resolve('../app/javascript/yo/index.html')
-    }),
-  ],
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     filename: '../index.html',
+  //     template: path.resolve('../app/javascript/yo/index.html')
+  //   }),
+  // ],
 
   resolve: {
     extensions: [ '.js', '.coffee' ],
