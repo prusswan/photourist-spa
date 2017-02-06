@@ -1,6 +1,10 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy]
 
+  def home
+
+  end
+
   # GET /cities
   # GET /cities.json
   def index
