@@ -13,7 +13,7 @@ export const cityView = {
 
       <city-detail city="$ctrl.city"></city-detail>
 
-      <!-- This button has a relative ui-sref to the citys.city.edit state. -->
+      <!-- This button has a relative ui-sref to the cities.edit state. -->
       <button class="btn btn-primary" ui-sref=".edit">
         <i class="fa fa-pencil"></i><span>Edit city</span>
       </button>

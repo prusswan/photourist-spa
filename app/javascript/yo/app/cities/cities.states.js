@@ -26,9 +26,9 @@ export const viewCityState = {
   name: 'cities.city',
   url: '/:cityId',
   resolve: {
-    // Resolve the citie, based on the citieId parameter value.
+    // Resolve the city, based on the citieId parameter value.
     // The resolved citie is provided to the citieComponent's citie binding
-    citie: (CitiesService, $transition$) => CitiesService.get($transition$.params().cityId)
+    city: (CitiesService, $transition$) => CitiesService.get($transition$.params().cityId)
   },
   component: 'cityView'
 };
@@ -43,17 +43,14 @@ export const viewCityState = {
  * by 'cities.citie') with the edit citie template/controller
  */
 export const editCityState = {
-  name: 'cities.city.edit',
-  url: '/edit',
-  views: {
-    // Relatively target the grand-parent-state's $default (unnamed) ui-view
-    // This could also have been written using ui-view@state addressing: $default@cities
-    // Or, this could also have been written using absolute ui-view addressing: !$default.$default.$default
-    '^.^.$default': {
-      bindings: { pristineCity: "city" },
-      component: 'editCity'
-    }
-  }
+  name: 'cities.edit',
+  url: '/:cityId/edit',
+  resolve: {
+    // Resolve the city, based on the citieId parameter value.
+    // The resolved citie is provided to the citieComponent's citie binding
+    pristineCity: (CitiesService, $transition$) => CitiesService.get({id: $transition$.params().cityId}).$promise
+  },
+  component: 'editCity'
 };
 
 /**

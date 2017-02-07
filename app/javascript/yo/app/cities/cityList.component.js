@@ -20,11 +20,11 @@ export const cityList = {
       </thead>
       <tbody>
         <tr ng-repeat="city in $ctrl.cities" ui-sref-active="selected">
-          <td><a ui-sref=".city({cityId: city._id})">{{ city.id }}</a></td>
+          <td>{{ city.id }}</td>
           <td>{{ city.name }}</td>
           <td>{{ city.created_at }}</td>
           <td>
-            <button class="btn btn-default btn-xs" ui-sref=".edit">Edit</button>
+            <button class="btn btn-default btn-xs" ui-sref=".edit({cityId: city.id})">Edit</button>
             <div class="btn btn-xs btn-danger"><a>Destroy</div>
           </td>
         </tr>
