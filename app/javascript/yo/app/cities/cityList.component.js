@@ -19,6 +19,7 @@ export const cityList = {
           <th>Id</th>
           <th>Name</th>
           <th>Created at</th>
+          <th>Updated at</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -26,7 +27,8 @@ export const cityList = {
         <tr ng-repeat="city in $ctrl.cities" ui-sref-active="selected">
           <td>{{ city.id }}</td>
           <td>{{ city.name }}</td>
-          <td>{{ city.created_at }}</td>
+          <td>{{ city.created_at | date: 'medium' }}</td>
+          <td>{{ city.updated_at | date: 'medium' }}</td>
           <td>
             <button class="btn btn-default btn-xs" ui-sref=".edit({cityId: city.id})" ng-disabled="city.id == 1">Edit</button>
             <button class="btn btn-xs btn-danger" ng-click="$ctrl.remove(city)" ng-disabled="city.id == 1">Delete</button>
