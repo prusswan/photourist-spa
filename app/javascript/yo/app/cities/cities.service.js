@@ -1,7 +1,7 @@
 class CitiesService {
   /** @ngInject */
   constructor($resource) {
-    var city = $resource('http://localhost:3000/api/cities/:id',
+    var city = $resource('https://photourist.herokuapp.com/api/cities/:id',
       { },
       {
         index: { method: 'GET', isArray: true, responseType: 'json' },
