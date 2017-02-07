@@ -11,7 +11,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state({
       name: 'app',
       redirectTo: 'cities',
-      component: 'cities'
+      template: '<ui-view/>'
     })
     .state(citiesState)
     .state(editCityState)

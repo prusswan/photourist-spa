@@ -25,7 +25,7 @@ class EditCityController {
   constructor($state, CitiesService) {
     this.$state = $state;
     // this.DialogService = DialogService;
-    this.Cities = CitiesService;
+    this.CitiesService = CitiesService;
   }
 
   $onInit() {
@@ -46,14 +46,14 @@ class EditCityController {
 
   /** Ask for confirmation, then delete the citie, then go to the grandparent state ('cities') */
   remove(city) {
-    this.Cities.remove(city)
+    this.CitiesService.remove(city)
         .then(() => this.canExit = true)
         .then(() => this.$state.go("^.^", null, { reload: true }));
   }
 
   /** Save the city, then go to the grandparent state ('cities') */
   save(city) {
-    this.Cities.save(city)
+    this.CitiesService.save(city).$promise
         .then(() => this.canExit = true)
         .then(() => this.$state.go("^", null, { reload: true }));
   }

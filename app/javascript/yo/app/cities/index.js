@@ -2,13 +2,10 @@ import angular from 'angular';
 import ngResource from 'angular-resource';
 
 import CitiesService from './cities.service';
-import {cities} from './cities';
-
-
 
 // import {contactDetail} from "./contactDetail.component";
 import {cityList} from "./cityList.component";
-// import {contacts} from "./contacts.component";
+import {cities} from './cities.component';
 import {cityView} from "./city.component";
 import {editCity} from "./editCity.component";
 
