@@ -10,8 +10,19 @@ module.exports = merge(config, {
   output: { filename: "[name]-[hash].js" },
 
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+    }),
     new webpack.LoaderOptionsPlugin({
-      minimize: true
+      sourceMap: true,
+      minimize: true,
+      discardComments: {
+        removeAll: true
+      },
+      options: {
+        context: '',
+        output: '' //webpackconfig.output
+      }
     })
   ]
 })
