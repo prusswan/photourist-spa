@@ -24,7 +24,7 @@ export const editCity =  {
       <div>
         <!-- This button's ui-sref relatively targets the parent state, i.e., cities.city -->
         <button class="btn btn-primary" ui-sref="^"><i class="fa fa-close"></i><span>Cancel</span></button>
-        <button class="btn btn-primary" ng-click="$ctrl.save($ctrl.city)"><i class="fa fa-save"></i><span>Save</span></button>
+        <button class="btn btn-primary" ng-click="$ctrl.save($ctrl.city)"><i class="fa fa-save"></i><span>{{ $ctrl.city.id ? 'Update' : 'Create' }}</span></button>
       </div>
     </div>
 `};
