@@ -28,8 +28,8 @@ export const cityList = {
           <td>{{ city.name }}</td>
           <td>{{ city.created_at }}</td>
           <td>
-            <button class="btn btn-default btn-xs" ui-sref=".edit({cityId: city.id})">Edit</button>
-            <button class="btn btn-xs btn-danger" ng-click="$ctrl.remove(city)">Destroy</button>
+            <button class="btn btn-default btn-xs" ui-sref=".edit({cityId: city.id})" ng-disabled="city.id == 1">Edit</button>
+            <button class="btn btn-xs btn-danger" ng-click="$ctrl.remove(city)" ng-disabled="city.id == 1">Destroy</button>
           </td>
         </tr>
       </tbody>
