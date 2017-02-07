@@ -5,7 +5,8 @@ class CitiesService {
       { },
       {
         index: { method: 'GET', isArray: true, responseType: 'json' },
-        show:  { method: 'GET', responseType: 'json', param: {id: '@id'} }
+        show:  { method: 'GET', responseType: 'json' },
+        update:  { method: 'PUT', responseType: 'json' }
       }
     );
 

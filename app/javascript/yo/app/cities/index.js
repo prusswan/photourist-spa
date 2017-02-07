@@ -4,17 +4,14 @@ import ngResource from 'angular-resource';
 import CitiesService from './cities.service';
 
 // import {contactDetail} from "./contactDetail.component";
-import {cityList} from "./cityList.component";
-import {cities} from './cities.component';
+
 import {cityView} from "./city.component";
+
+import EditCityController from "./editCity.controller";
 import {editCity} from "./editCity.component";
 
-
-// const contactsAppModule = {
-//   components: {contactView, contacts, editContact, contactDetail, contactList},
-//   states: [contactsState, newContactState, viewContactState, editContactState]
-// };
-
+import {cityList} from "./cityList.component";
+import {cities} from './cities.component';
 
 export const citiesModule = 'cities';
 

@@ -1,3 +1,5 @@
+import EditCityController from './editCity.controller';
+
 /**
  * This component renders a list of cities.
  *
@@ -6,6 +8,8 @@
  */
 export const cityList = {
   bindings: { cities: '<' },
+
+  controller: EditCityController,
 
   template: `
 
@@ -25,7 +29,7 @@ export const cityList = {
           <td>{{ city.created_at }}</td>
           <td>
             <button class="btn btn-default btn-xs" ui-sref=".edit({cityId: city.id})">Edit</button>
-            <div class="btn btn-xs btn-danger"><a>Destroy</div>
+            <button class="btn btn-xs btn-danger" ng-click="$ctrl.remove(city)">Destroy</button>
           </td>
         </tr>
       </tbody>
