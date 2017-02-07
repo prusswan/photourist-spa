@@ -69,4 +69,6 @@ class EditCityController {
   }
 }
 
+EditCityController.$inject = ['$state', 'CitiesService'];
+
 export default EditCityController

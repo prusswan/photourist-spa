@@ -12,7 +12,7 @@ export const citiesState = {
   url: "/cities",
   resolve: {
     // Resolve all the cities.  The resolved cities are injected into the controller.
-    cities: (CitiesService) => CitiesService.index()
+    cities: ['CitiesService', (CitiesService) => CitiesService.index()]
   },
   data: { requiresAuth: true },
   component: 'cities'
@@ -28,7 +28,7 @@ export const viewCityState = {
   resolve: {
     // Resolve the city, based on the citieId parameter value.
     // The resolved citie is provided to the citieComponent's citie binding
-    city: (CitiesService, $transition$) => CitiesService.get($transition$.params().cityId)
+    city: ['CitiesService', '$transition$', (CitiesService, $transition$) => CitiesService.get($transition$.params().cityId)]
   },
   component: 'cityView'
 };
@@ -48,7 +48,7 @@ export const editCityState = {
   resolve: {
     // Resolve the city, based on the citieId parameter value.
     // The resolved citie is provided to the citieComponent's citie binding
-    pristineCity: (CitiesService, $transition$) => CitiesService.get({id: $transition$.params().cityId}).$promise
+    pristineCity: ['CitiesService', '$transition$', (CitiesService, $transition$) => CitiesService.get({id: $transition$.params().cityId}).$promise]
   },
   component: 'editCity'
 };

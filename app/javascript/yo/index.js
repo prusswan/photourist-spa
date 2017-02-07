@@ -19,13 +19,14 @@ import './index.scss';
 
 import { Visualizer } from 'ui-router-visualizer';
 
+function uiRouterConfig($uiRouter){
+  var pluginInstance = $uiRouter.plugin(Visualizer);
+}
+
+uiRouterConfig.$inject = ['$uiRouter'];
+
 angular
   .module('app', [techsModule, citiesModule, uiRouter, 'ui.bootstrap'])
   .config(routesConfig)
   .component('app', main)
-  .component('fountainHeader', header)
-  .component('fountainTitle', title)
-  .component('fountainFooter', footer)
-  .run(function($uiRouter){
-    var pluginInstance = $uiRouter.plugin(Visualizer);
-  });
+  .run(uiRouterConfig);

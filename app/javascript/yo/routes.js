@@ -18,3 +18,5 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state(newCityState)
     .state(viewCityState);
 }
+
+routesConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
