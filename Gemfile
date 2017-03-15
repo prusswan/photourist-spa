@@ -6,10 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', github: "rails/rails"
-gem 'arel', github: "rails/arel"
 
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', github: "rails/sass-rails"
 
@@ -38,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.7.0'
+  gem 'selenium-webdriver'
 end
 
 group :development do
